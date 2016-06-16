@@ -15,5 +15,6 @@
 
 #define input_update() glfwPollEvents()
 #define input_callback(window, InputMethod, callback) glfwSet##InputMethod##Callback(window, callback)
+#define input_mode(window, mode, value) glfwSetInputMode(window, GLFW_##mode, GLFW_##value)
 
 #endif
