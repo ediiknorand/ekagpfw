@@ -13,7 +13,7 @@ int main()
 {
   if(!gl_init())
     return 1;
-  Window *w = window_create("Takeshi & The Amazing Slideless", 800, 600);
+  Window *w = window_create("Test window", 800, 600);
   if(!w) {
     gl_end();
     return 1;
