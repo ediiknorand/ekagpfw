@@ -2,17 +2,18 @@ OBJ= gl/gl gl/shader gl/program gl/vbo gl/fbo \
 	 util/file util/matrix \
 	 window/window \
 	 loop/single \
+	 gui/text/atlas gui/text/program gui/text/vbo gui/text/ibo gui/text/text \
 	 game/test/scene game/test/input game/test/display
-LIB=m GL glfw GLEW
+LIB=m GL glfw GLEW freetype
 MAIN=main
 APP=app
 
 CC=gcc
-CC_FLAGS=-Wall -O2 -L"lib/" -I"include/" $(shell pkg-config --cflags --libs glib-2.0)
+CC_FLAGS=-Wall -O2 -L"lib/" -I"include/" -I"/usr/include/freetype2/"
 
 SRC=src
 OBJ_PATH=obj
-OBJ_SUB=util gl window loop sound game/test
+OBJ_SUB=util gl window loop sound game/test gui/text
 BUILD=build
 
 OBJ_FILES=$(addprefix $(OBJ_PATH)/, $(addsuffix .o, $(OBJ)))
